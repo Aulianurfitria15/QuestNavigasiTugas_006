@@ -223,4 +223,53 @@ fun FormulirScreen(
                     colors = CardDefaults.cardColors(
                         containerColor = Color.White)
                 ) {
+                    Column(
+                        modifier = Modifier
+                            .padding(24.dp)) {
+                        Text(
+                            text = "Data karyawan berhasil disimpan!",
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = Color.Black,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(bottom = 16.dp),
+                            textAlign = TextAlign.Center
+                        )
+                        Text(
+                            "Nama: $namaLengkap",
+                            fontSize = 12.sp)
+                        Text(
+                            "Jenis Kelamin: $jenisKelamin",
+                            fontSize = 12.sp)
+                        Text(
+                            "umur: $umur",
+                            fontSize = 12.sp)
+                        Text(
+                            "jabatan: $jabatan",
+                            fontSize = 12.sp)
+                        Text(
+                            "Status: $status",
+                            fontSize = 12.sp,
+                            modifier = Modifier
+                                .padding(bottom = 16.dp))
+
+                        Button(
+                            onClick = { showPopup = false; onKembali() },
+                            modifier = Modifier
+                                .fillMaxWidth(),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.Black)
+                        ) {
+                            Text(
+                                "OK",
+                                color = Color.White)
+                        }
                     }
+                }
+            }
+        }
+    }
+}
+
+
