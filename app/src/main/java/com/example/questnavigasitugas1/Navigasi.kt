@@ -15,3 +15,8 @@ enum class HalamanApp {
     Formulir
 }
 
+@Composable
+fun NavigasiApp(
+    navController: NavHostController = rememberNavController(),
+    viewModel: com.example.questnavigasitugas1.view.PesertaViewModel = viewModel()
+) {
