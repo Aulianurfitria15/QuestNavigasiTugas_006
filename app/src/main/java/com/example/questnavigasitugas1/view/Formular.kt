@@ -216,3 +216,11 @@ fun FormulirScreen(
             }
         }
 
+        if (showPopup) {
+            Dialog(onDismissRequest = {}) {
+                Card(
+                    shape = RoundedCornerShape(16.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = Color.White)
+                ) {
+                    }
