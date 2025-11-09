@@ -57,3 +57,10 @@ fun FormulirScreen(
             .padding(16.dp)
     )
     {
+        Column(
+            modifier = Modifier
+                .verticalScroll(rememberScrollState())
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            }
