@@ -152,3 +152,38 @@ fun ListScreen(
                             fontSize = 14.sp
                         )
                     }
+                } else {
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(horizontal = 16.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        items(listPeserta) { peserta ->
+                            Card(
+                                modifier = Modifier
+                                    .fillMaxWidth(),
+                                shape = RoundedCornerShape(16.dp),
+                                colors = CardDefaults.cardColors(
+                                    containerColor = Color.Black.copy(alpha = 0.4f)
+                                ),
+                                elevation = CardDefaults.cardElevation(
+                                    defaultElevation = 2.dp)
+                            ) {
+                                Column(modifier = Modifier.padding(16.dp)) {
+                                    Text("Nama: ${peserta.namaLengkap}", color = Color.White)
+                                    Text("Jenis Kelamin: ${peserta.jenisKelamin}", color = Color.White)
+                                    Text("Umur: ${peserta.umur}", color = Color.White)
+                                    Text("Jabatan: ${peserta.jabatan}", color = Color.White)
+                                    Text("Status: ${peserta.status}", color = Color.White)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
