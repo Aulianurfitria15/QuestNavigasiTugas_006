@@ -169,3 +169,17 @@ fun FormulirScreen(
                         }
                     }
 
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        OutlinedButton(
+                            onClick = { onKembali() },
+                            modifier = Modifier
+                                .weight(1f)
+                        ) {
+                            Text(
+                                "Kembali")
+                        }
+
