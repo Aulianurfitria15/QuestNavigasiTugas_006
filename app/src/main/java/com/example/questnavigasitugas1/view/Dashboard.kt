@@ -107,3 +107,9 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
     }
 }
 
+@Composable
+fun ListScreen(
+    listPeserta: List<TampilData>,
+    onNavigateToForm: () -> Unit,
+    onNavigateToHome: () -> Unit
+) {
