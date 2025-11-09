@@ -113,3 +113,21 @@ fun ListScreen(
     onNavigateToForm: () -> Unit,
     onNavigateToHome: () -> Unit
 ) {
+    Box(modifier = Modifier.fillMaxSize()) {
+        Image(
+            painter = painterResource(id = R.drawable.fbg),
+            contentDescription = "Background",
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
+
+        Scaffold(
+            containerColor = Color.Transparent,
+            bottomBar = {
+                BottomNavigationBar(
+                    currentScreen = "list",
+                    onNavigateToHome = onNavigateToHome,
+                    onNavigateToForm = onNavigateToForm
+                )
+            }
+        
