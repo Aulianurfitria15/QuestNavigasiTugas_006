@@ -20,3 +20,44 @@ fun NavigasiApp(
     navController: NavHostController = rememberNavController(),
     viewModel: com.example.questnavigasitugas1.view.PesertaViewModel = viewModel()
 ) {
+    val listPeserta by viewModel.listPeserta.collectAsState()
+
+    NavHost(
+        navController = navController,
+        startDestination = HalamanApp.Welcome.name
+    ) {
+        composable(HalamanApp.Welcome.name) {
+            com.example.questnavigasitugas1.view.WelcomeScreen(
+                onMasukClick = {
+                    navController.navigate(HalamanApp.List.name)
+                }
+            )
+        }
+
+        composable(HalamanApp.List.name) {
+            com.example.questnavigasitugas1.view.ListScreen(
+                listPeserta = listPeserta,
+                onNavigateToForm = {
+                    navController.navigate(HalamanApp.Formulir.name)
+                },
+                onNavigateToHome = {
+                    navController.popBackStack(
+                        HalamanApp.Welcome.name,
+                        inclusive = false
+                    )
+                }
+            )
+        }
+
+        composable(HalamanApp.Formulir.name) {
+            com.example.questnavigasitugas1.view.FormulirScreen(
+                onSubmit = { data ->
+                    viewModel.addPeserta(data)
+                },
+                onKembali = {
+                    navController.navigate(HalamanApp.List.name)
+                }
+            )
+        }
+    }
+}
