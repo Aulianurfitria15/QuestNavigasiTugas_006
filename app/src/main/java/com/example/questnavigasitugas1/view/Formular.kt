@@ -40,4 +40,20 @@ fun FormulirScreen(
 
     val statusOptions = listOf("Aktif", "Non Akitf")
 
-    }
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    )
+    Image(
+        painter = painterResource(id = R.drawable.fbg),
+        contentDescription = "Background",
+        modifier = Modifier
+            .fillMaxSize(),
+        contentScale = ContentScale.Crop
+    )
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    )
+    {
