@@ -66,3 +66,13 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
+            Image(
+                painter = painterResource(id = R.drawable.aul),
+                contentDescription = "Logo Employee",
+                modifier = Modifier
+                    .size(200.dp)
+                    .padding(vertical = 12.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop
+            )
+
