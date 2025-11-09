@@ -193,3 +193,25 @@ fun BottomNavigationBar(
     onNavigateToHome: () -> Unit,
     onNavigateToForm: () -> Unit
 ) {
+    NavigationBar(containerColor = Color.DarkGray) {
+        NavigationBarItem(
+            icon = {
+                Icon(
+                    Icons.Default.Home,
+                    contentDescription = "Beranda",
+                    tint = Color.White
+                )
+            },
+            label = {
+                Text(
+                    "Beranda",
+                    fontSize = 10.sp,
+                    color = Color.White
+                )
+            },
+            selected = currentScreen == "list",
+            onClick = onNavigateToHome,
+            colors = NavigationBarItemDefaults.colors(
+                indicatorColor = Color.White.copy(alpha = 0.3f)
+            )
+        )
