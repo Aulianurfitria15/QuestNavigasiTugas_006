@@ -76,3 +76,16 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
                 contentScale = ContentScale.Crop
             )
 
+            Text(
+                "Aulia Nurfitria Dewi",
+                fontWeight = FontWeight.Bold,
+                fontSize = 16.sp,
+                color = Color.Black)
+
+            Text(
+                "20230140006",
+                fontWeight = FontWeight.Bold,
+                fontSize = 13.sp,
+                color = Color.Black,
+                modifier = Modifier.padding(bottom = 36.dp))
+
