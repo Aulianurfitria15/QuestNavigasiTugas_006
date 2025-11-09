@@ -296,3 +296,44 @@ fun InputField(label: String,
     )
 }
 
+@Composable
+fun GenderField(selected: String,
+                onSelect: (String) -> Unit) {
+    Text(
+        "Jenis Kelamin",
+        fontSize = 12.sp,
+        fontWeight = FontWeight.SemiBold,
+        color = Color.DarkGray)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(
+                selected = selected == "Laki-laki",
+                onClick = { onSelect("Laki-laki") },
+                colors = RadioButtonDefaults.colors(
+                    selectedColor = Color.Black)
+            )
+            Text(
+                "Laki-laki",
+                fontSize = 14.sp,
+                color = Color.Gray)
+        }
+        Row(
+            verticalAlignment = Alignment.CenterVertically) {
+            RadioButton(
+                selected = selected == "Perempuan",
+                onClick = { onSelect("Perempuan") },
+                colors = RadioButtonDefaults.colors(
+                    selectedColor = Color.Black)
+            )
+            Text("Perempuan",
+                fontSize = 14.sp,
+                color = Color.Gray)
+        }
+    }
+}
