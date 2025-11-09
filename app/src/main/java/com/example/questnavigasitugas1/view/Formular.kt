@@ -29,4 +29,15 @@ fun FormulirScreen(
     onSubmit: (TampilData) -> Unit,
     onKembali: () -> Unit
 ) {
+    var namaLengkap by remember { mutableStateOf("") }
+    var jenisKelamin by remember { mutableStateOf("") }
+    var umur by remember { mutableStateOf("") }
+    var jabatan by remember { mutableStateOf("") }
+    var status by remember { mutableStateOf("") }
+    var showError by remember { mutableStateOf(false) }
+    var showPopup by remember { mutableStateOf(false) }
+    var expandedStatus by remember { mutableStateOf(false) }
+
+    val statusOptions = listOf("Aktif", "Non Akitf")
+
     }
