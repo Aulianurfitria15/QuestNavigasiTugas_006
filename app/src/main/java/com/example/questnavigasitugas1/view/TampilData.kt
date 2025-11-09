@@ -62,3 +62,9 @@ class PesertaViewModel : ViewModel() {
         )
     )
 
+    val listPeserta: StateFlow<List<TampilData>> = _listPeserta.asStateFlow()
+
+    fun addPeserta(data: TampilData) {
+        _listPeserta.value = _listPeserta.value + data
+    }
+}
