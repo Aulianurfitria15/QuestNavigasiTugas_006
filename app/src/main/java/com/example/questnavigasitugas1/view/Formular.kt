@@ -63,4 +63,13 @@ fun FormulirScreen(
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Text(
+                text = "Formulir Data Karyawan",
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                modifier = Modifier
+                    .padding(top = 16.dp, bottom = 16.dp)
+            )
+
             }
