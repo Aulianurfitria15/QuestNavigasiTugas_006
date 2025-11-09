@@ -130,4 +130,17 @@ fun ListScreen(
                     onNavigateToForm = onNavigateToForm
                 )
             }
-        
+        ) { paddingValues ->
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(paddingValues)
+            ) {
+                Text(
+                    text = "Data Karyawan",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    modifier = Modifier.padding(24.dp)
+                )
+
