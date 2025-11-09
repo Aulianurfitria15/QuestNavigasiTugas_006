@@ -44,3 +44,10 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
             .fillMaxSize()
             .background(Color.White)
     ) {
+        Image(
+            painter = painterResource(id = R.drawable.fbg),
+            contentDescription = "Background",
+            modifier = Modifier
+                .fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
