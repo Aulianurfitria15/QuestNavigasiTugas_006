@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -32,7 +33,7 @@ fun FormulirScreen(
     var namaLengkap by remember { mutableStateOf("") }
     var jenisKelamin by remember { mutableStateOf("") }
     var umur by remember { mutableStateOf("") }
-    var jabatan by remember { mutableStateOf("") }
+    var pekerjaan by remember { mutableStateOf("") }
     var status by remember { mutableStateOf("") }
     var showError by remember { mutableStateOf(false) }
     var showPopup by remember { mutableStateOf(false) }
@@ -64,16 +65,18 @@ fun FormulirScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Formulir Data Karyawan",
-                fontSize = 22.sp,
+                text = "Formulir Data",
+                fontSize = 27.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.White,
+                fontFamily = FontFamily.Cursive,
                 modifier = Modifier
                     .padding(top = 16.dp, bottom = 16.dp)
             )
 
+
             Card(
-                shape = RoundedCornerShape(20.dp),
+                shape = RoundedCornerShape(25.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color.White),
                 elevation = CardDefaults.cardElevation(
@@ -102,7 +105,7 @@ fun FormulirScreen(
                                 Spacer(modifier = Modifier
                                     .width(8.dp))
                                 Text(
-                                    text = "Data tidak boleh kosong",
+                                    text = "Data harus di isi",
                                     color = Color.Red,
                                     fontSize = 18.sp,
                                     fontWeight = FontWeight.Bold
@@ -123,9 +126,9 @@ fun FormulirScreen(
                         umur
                     ) { umur = it; showError = false }
                     InputField(
-                        "Jabatan",
-                        jabatan
-                    ) { jabatan = it; showError = false }
+                        "Pekerjaan",
+                        pekerjaan
+                    ) { pekerjaan = it; showError = false }
 
                     Text(
                         "Status",
@@ -143,7 +146,7 @@ fun FormulirScreen(
                             value = status,
                             onValueChange = {},
                             readOnly = true,
-                            placeholder = { Text("Pilih status karyawan") },
+                            placeholder = { Text("Pilih status") },
                             trailingIcon = {
                                 ExposedDropdownMenuDefaults.TrailingIcon(expanded = expandedStatus)
                             },
@@ -176,17 +179,20 @@ fun FormulirScreen(
                     ) {
                         OutlinedButton(
                             onClick = { onKembali() },
-                            modifier = Modifier
-                                .weight(1f)
+                            modifier = Modifier.weight(1f),
+                            colors = ButtonDefaults.outlinedButtonColors(
+                                containerColor = Color.LightGray,
+                                contentColor = Color.Blue
+                            )
                         ) {
-                            Text(
-                                "Kembali")
+                            Text("Kembali")
                         }
+
 
                         Button(
                             onClick = {
                                 if (namaLengkap.isEmpty() || jenisKelamin.isEmpty() ||
-                                    umur.isEmpty() || jabatan.isEmpty() || status.isEmpty()
+                                    umur.isEmpty() || pekerjaan.isEmpty() || status.isEmpty()
                                 ) {
                                     showError = true
                                 } else {
@@ -195,7 +201,7 @@ fun FormulirScreen(
                                             namaLengkap,
                                             jenisKelamin,
                                             umur,
-                                            jabatan,
+                                            pekerjaan,
                                             status
                                         )
                                     )
@@ -205,11 +211,11 @@ fun FormulirScreen(
                             modifier = Modifier
                                 .weight(1f),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Color.Black)
+                                containerColor = Color.LightGray)
                         ) {
                             Text(
                                 "Submit",
-                                color = Color.White)
+                                color = Color.Blue)
                         }
                     }
                 }
@@ -221,15 +227,16 @@ fun FormulirScreen(
                 Card(
                     shape = RoundedCornerShape(16.dp),
                     colors = CardDefaults.cardColors(
-                        containerColor = Color.White)
+                        containerColor = Color.LightGray)
                 ) {
                     Column(
                         modifier = Modifier
                             .padding(24.dp)) {
                         Text(
-                            text = "Data karyawan berhasil disimpan!",
+                            text = "Data karyawan berhasil disimpan",
                             fontSize = 16.sp,
                             fontWeight = FontWeight.SemiBold,
+                            fontFamily = FontFamily.Serif,
                             color = Color.Black,
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -246,7 +253,7 @@ fun FormulirScreen(
                             "umur: $umur",
                             fontSize = 12.sp)
                         Text(
-                            "jabatan: $jabatan",
+                            "pekerjaan: $pekerjaan",
                             fontSize = 12.sp)
                         Text(
                             "Status: $status",
@@ -259,11 +266,11 @@ fun FormulirScreen(
                             modifier = Modifier
                                 .fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Color.Black)
+                                containerColor = Color.White)
                         ) {
                             Text(
                                 "OK",
-                                color = Color.White)
+                                color = Color.Blue)
                         }
                     }
                 }
