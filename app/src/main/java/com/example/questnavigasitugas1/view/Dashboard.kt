@@ -37,3 +37,10 @@ fun DashboardScreen(
     )
 }
 
+@Composable
+fun WelcomeScreen(onMasukClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+    ) {
