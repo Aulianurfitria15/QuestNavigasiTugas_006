@@ -18,7 +18,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.questnavigasitugas1.R
@@ -58,17 +60,20 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
+            Spacer(modifier = Modifier.height(50.dp))
             Text(
                 text = "Selamat Datang",
-                fontSize = 27.sp,
+                fontSize = 35.sp,
                 fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Serif,
                 color = Color.Black,
-                modifier = Modifier.padding(bottom = 8.dp)
+                modifier = Modifier.padding(bottom = 16.dp)
             )
+
 
             Image(
                 painter = painterResource(id = R.drawable.aul),
-                contentDescription = "Logo Employee",
+                contentDescription = "Foto Profil",
                 modifier = Modifier
                     .size(200.dp)
                     .padding(vertical = 12.dp)
@@ -79,13 +84,15 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
             Text(
                 "Aulia Nurfitria Dewi",
                 fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
+                fontFamily = FontFamily.SansSerif,
+                fontSize = 25.sp,
                 color = Color.Black)
 
             Text(
                 "20230140006",
                 fontWeight = FontWeight.Bold,
-                fontSize = 13.sp,
+                fontFamily = FontFamily.Serif,
+                fontSize = 20.sp,
                 color = Color.Black,
                 modifier = Modifier.padding(bottom = 36.dp))
 
@@ -101,7 +108,9 @@ fun WelcomeScreen(onMasukClick: () -> Unit) {
                     "Masuk",
                     fontSize = 15.sp,
                     color = Color.White,
+                    fontFamily = FontFamily.Serif,
                     fontWeight = FontWeight.Medium)
+
             }
         }
     }
@@ -138,11 +147,16 @@ fun ListScreen(
             ) {
                 Text(
                     text = "Data Karyawan",
-                    fontSize = 20.sp,
+                    fontSize = 27.sp,
                     fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily.Cursive,
                     color = Color.White,
-                    modifier = Modifier.padding(24.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp),
+                    textAlign = TextAlign.Center
                 )
+
 
                 if (listPeserta.isEmpty()) {
                     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -174,7 +188,7 @@ fun ListScreen(
                                     Text("Nama: ${peserta.namaLengkap}", color = Color.White)
                                     Text("Jenis Kelamin: ${peserta.jenisKelamin}", color = Color.White)
                                     Text("Umur: ${peserta.umur}", color = Color.White)
-                                    Text("Jabatan: ${peserta.jabatan}", color = Color.White)
+                                    Text("Pekerjaan: ${peserta.pekerjaan}", color = Color.White)
                                     Text("Status: ${peserta.status}", color = Color.White)
                                 }
                             }
