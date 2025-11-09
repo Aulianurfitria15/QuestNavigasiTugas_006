@@ -183,3 +183,36 @@ fun FormulirScreen(
                                 "Kembali")
                         }
 
+                        Button(
+                            onClick = {
+                                if (namaLengkap.isEmpty() || jenisKelamin.isEmpty() ||
+                                    umur.isEmpty() || jabatan.isEmpty() || status.isEmpty()
+                                ) {
+                                    showError = true
+                                } else {
+                                    onSubmit(
+                                        TampilData(
+                                            namaLengkap,
+                                            jenisKelamin,
+                                            umur,
+                                            jabatan,
+                                            status
+                                        )
+                                    )
+                                    showPopup = true
+                                }
+                            },
+                            modifier = Modifier
+                                .weight(1f),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color.Black)
+                        ) {
+                            Text(
+                                "Submit",
+                                color = Color.White)
+                        }
+                    }
+                }
+            }
+        }
+
